@@ -29,7 +29,7 @@ jobs:
         if [ -f "generate_wordcloud.py" ]; then
           rm -rf generate_wordcloud.py
         fi
-        https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/generate_wordcloud.py
+        wget https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/generate_wordcloud.py
         python generate_wordcloud.py
         
     - name: Commit file
