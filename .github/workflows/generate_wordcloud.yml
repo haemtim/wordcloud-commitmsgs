@@ -28,7 +28,6 @@ jobs:
         mkdir wordcloud && cd wordcloud
         python -m pip install --upgrade pip
         pip install wordcloud
-        touch commitmsgs.txt
         if [ -f "generate_wordcloud.py" ]; then
           rm -rf generate_wordcloud.py
         fi
