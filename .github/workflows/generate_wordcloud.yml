@@ -28,15 +28,11 @@ jobs:
         
     - name: Setup directories and files
       run: |
-        if [ -f "wordcloud" ]; then
-          rm -rf wordcloud
-        fi
+        rm -rf wordcloud
         mkdir wordcloud 
         echo "Directory wordcloud created"
         cd wordcloud
-        if [ -f "generate_wordcloud.py" ]; then
-          rm -rf generate_wordcloud.py
-        fi
+        rm -rf generate_wordcloud.py
         wget https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/generate_wordcloud.py
         echo "Python script donloaded"
         
@@ -47,9 +43,7 @@ jobs:
     - name: Generate Readme
       run: |
         cd wordcloud
-        if [ -f "README.md" ]; then
-          rm -rf README.md
-        fi
+        rm -rf README.md
         echo "![wordcloud](wordcloud.png)" > README.md
         
     - name: Cleanup commitmsgs.txt
