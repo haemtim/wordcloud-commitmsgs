@@ -1,3 +1,6 @@
+Delete commitmsgs.txt
+Delete wordcloud.png
+Add WorldCloud
 Update generate_wordcloud.py
 Update generate_wordcloud.py
 Add WorldCloud
