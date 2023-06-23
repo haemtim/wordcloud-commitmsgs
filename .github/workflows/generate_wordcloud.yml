@@ -34,6 +34,7 @@ jobs:
         fi
         wget https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/generate_wordcloud.py
         python generate_wordcloud.py
+        rm -rf commitmsgs.txt
         
     - name: Commit file
       run: |
