@@ -27,7 +27,7 @@ jobs:
         pip install wordcloud
         touch commitmsgs.txt
         wget https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/wordcloud.py
-        ls -la
+        python wordcloud.py
         
     - name: Commit file
       run: |
