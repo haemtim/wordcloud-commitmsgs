@@ -1,4 +1,4 @@
-from wordcloud import WordCloud
+from wordcloud.wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import subprocess
 
