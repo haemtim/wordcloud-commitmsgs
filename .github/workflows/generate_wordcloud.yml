@@ -20,28 +20,46 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-    - name: run generate_wordcloud.py
+        
+    - name: Setup Python requirements
+      run: |
+        python -m pip install --upgrade pip
+        pip install wordcloud
+        
+    - name: Setup directories and files
       run: |
         if [ -f "wordcloud/" ]; then
           rm -rf wordcloud/
         fi
-        mkdir wordcloud && cd wordcloud
-        python -m pip install --upgrade pip
-        pip install wordcloud
+        mkdir wordcloud 
+        echo "Directory wordcloud created"
+        cd wordcloud
         if [ -f "generate_wordcloud.py" ]; then
           rm -rf generate_wordcloud.py
         fi
         wget https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/generate_wordcloud.py
+        echo "Python script donloaded"
+        
+    - name: Run Python Script
+      run: |
         python generate_wordcloud.py
+        
+    - name: Generate Readme
+      run: |
+        cd wordcloud
         if [ -f "README.md" ]; then
           rm -rf README.md
         fi
         echo "![wordcloud](wordcloud.png)" > README.md
         
-    - name: Cleanup
+    - name: Cleanup commitmsgs.txt
       run: |
         cd wordcloud
         rm -rf commitmsgs.txt
+        
+    - name: Cleanup generate_wordcloud.py
+      run: |
+        cd wordcloud
         rm -rf generate_wordcloud.py
         
     - name: Commit file
