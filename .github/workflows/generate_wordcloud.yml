@@ -33,11 +33,16 @@ jobs:
         fi
         wget https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/generate_wordcloud.py
         python generate_wordcloud.py
+        if [ -f "README.md" ]; then
+          rm -rf README.md
+        fi
+        echo "![wordcloud](wordcloud.png)" > README.md
         
     - name: Cleanup
       run: |
         cd wordcloud
         rm -rf commitmsgs.txt
+        rm -rf generate_wordcloud.py
         
     - name: Commit file
       run: |
