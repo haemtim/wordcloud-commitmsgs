@@ -28,8 +28,8 @@ jobs:
         
     - name: Setup directories and files
       run: |
-        if [ -f "wordcloud/" ]; then
-          rm -rf wordcloud/
+        if [ -f "wordcloud" ]; then
+          rm -rf wordcloud
         fi
         mkdir wordcloud 
         echo "Directory wordcloud created"
