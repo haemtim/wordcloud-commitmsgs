@@ -1,4 +1,6 @@
 Update generate_wordcloud.yml
+Add WorldCloud
+Update generate_wordcloud.yml
 Delete commitmsgs.txt
 Delete generate_wordcloud.yml
 Add WorldCloud
