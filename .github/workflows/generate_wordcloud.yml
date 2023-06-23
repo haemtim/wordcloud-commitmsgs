@@ -20,8 +20,11 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-    - name: run wordlCloud.py
+    - name: run generate_wordcloud.py
       run: |
+        if [ -f "wordcloud/" ]; then
+          rm -rf wordcloud/
+        fi
         mkdir wordcloud && cd wordcloud
         python -m pip install --upgrade pip
         pip install wordcloud
@@ -29,7 +32,7 @@ jobs:
         if [ -f "generate_wordcloud.py" ]; then
           rm -rf generate_wordcloud.py
         fi
-        wget https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/generate_wordcloud.py
+        https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/generate_wordcloud.py
         python generate_wordcloud.py
         
     - name: Commit file

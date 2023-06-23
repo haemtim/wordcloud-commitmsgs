@@ -22,6 +22,9 @@ jobs:
         python-version: "3.10"
     - name: run generate_wordcloud.py
       run: |
+        if [ -f "wordcloud/" ]; then
+          rm -rf wordcloud/
+        fi
         mkdir wordcloud && cd wordcloud
         python -m pip install --upgrade pip
         pip install wordcloud
