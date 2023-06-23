@@ -34,6 +34,5 @@ plt.tight_layout(pad=0)
 plt.savefig('wordcloud.png')
 
 # Cleanup
-
-os.remove(commitmsgs.txt)
-os.remove(generate_wordcloud.py)
+os.remove('commitmsgs.txt')
+os.remove('generate_wordcloud.py')
