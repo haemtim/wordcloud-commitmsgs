@@ -26,8 +26,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install wordcloud
         touch commitmsgs.txt
+        if [ -f "wordcloud.py" ]; then
+          rm -rf wordcloud.py
+        fi
         wget https://raw.githubusercontent.com/haemtim/wordcloud-commitmsgs/main/wordcloud.py
-        ls -la
+        python wordcloud.py
         
     - name: Commit file
       run: |
