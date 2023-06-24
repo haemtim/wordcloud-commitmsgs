@@ -38,6 +38,7 @@ jobs:
         
     - name: Run Python Script
       run: |
+        cd wordcloud
         python generate_wordcloud.py
         
     - name: Generate Readme
