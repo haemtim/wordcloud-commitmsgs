@@ -5,10 +5,6 @@ import os
 
 WCDIR='wordcloud/'
 
-current_directory = os.getcwd()
-if not current_directory.endswith(WCDIR):
-    new_directory = os.path.join(current_directory, WCDIR)
-    os.chdir(new_directory)
 with open('commitmsgs.txt', 'w') as f:
     subprocess.run(['git', 'log', '--pretty=format:%s'], stdout=f)
 with open('commitmsgs.txt', 'r') as f:
