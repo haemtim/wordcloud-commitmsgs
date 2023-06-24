@@ -10,6 +10,8 @@ with open('commitmsgs.txt', 'w') as f:
 with open('commitmsgs.txt', 'r') as f:
     textParts = f.read().split('\n')
 
+textParts = list(textParts)
+
 for textPart in textParts:
     if "merge" in textPart.lower():
         textParts.remove(textPart)
