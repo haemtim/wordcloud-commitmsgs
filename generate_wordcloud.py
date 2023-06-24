@@ -13,8 +13,13 @@ with open('commitmsgs.txt', 'r') as f:
 for textPart in textParts:
     if "merge" in textPart.lower():
         textParts.remove(textPart)
-for textPart in textParts:
-    if "wordcloud" or "worldcloud" in textPart.lower():
+    elif "wordcloud" in textPart.lower():
+        textParts.remove(textPart)
+    elif "worldcloud" in textPart.lower:
+        textParts.remove(textPart)
+    elif "generate_wordcloud" in textPart.lower():
+        textParts.remove(textPart)
+    elif "yml" in textPart.lower():
         textParts.remove(textPart)
 
     #if "wordcloud" or "worldcloud" in textPart.lower():
