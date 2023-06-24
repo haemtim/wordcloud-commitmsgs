@@ -10,13 +10,13 @@ with open('commitmsgs.txt', 'w') as f:
 with open('commitmsgs.txt', 'r') as f:
     textParts = f.read().split('\n')
 
-for textPart in textParts:
-    if "merge" in textPart.lower():
-        textParts.remove(textPart)
-    if "wordcloud" or "worldcloud" in textPart.lower():
-        textParts.remove(textPart)
+filteredTextParts = []
 
-text = ' '.join(textParts)
+for textPart in textParts:
+    if "merge" not in textPart.lower() and "wordcloud" not in textPart.lower() and "worldcloud" not in textPart.lower() and "generate_wordcloud" not in textPart.lower() and "yml" not in textPart.lower():
+        filteredTextParts.append(textPart)
+
+text = ' '.join(filteredTextParts)
 
 # Create a WordCloud object
 wordcloud = WordCloud(width=800, height=800, background_color='white', min_font_size=10).generate(text)
