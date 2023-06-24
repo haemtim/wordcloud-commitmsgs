@@ -13,8 +13,8 @@ with open('commitmsgs.txt', 'r') as f:
 for textPart in textParts:
     if "merge" in textPart.lower():
         textParts.remove(textPart)
-    if "wordcloud" or "worldcloud" in textPart.lower():
-        textParts.remove(textPart)
+    #if "wordcloud" or "worldcloud" in textPart.lower():
+     #   textParts.remove(textPart)
 
 text = ' '.join(textParts)
 
