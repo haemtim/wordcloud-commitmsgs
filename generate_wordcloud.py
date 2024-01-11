@@ -13,7 +13,7 @@ with open('commitmsgs.txt', 'r') as f:
 filteredTextParts = []
 
 for textPart in textParts:
-    if "merge" not in textPart.lower() and "wordcloud" not in textPart.lower() and "worldcloud" not in textPart.lower() and "generate_wordcloud" not in textPart.lower() and "yml" not in textPart.lower() and "add " not in textPart.lower():
+    if "merge" not in textPart.lower() and "wordcloud" not in textPart.lower() and "worldcloud" not in textPart.lower() and "generate_wordcloud" not in textPart.lower() and "yml" not in textPart.lower() and "add " not in textPart.lower() and "automatic" not in textPart.lower() and "push" not in textPart.lower() and "build" not in textPart.lower() and "and" not in textPart.lower():
         filteredTextParts.append(textPart)
 
 text = ' '.join(filteredTextParts)
